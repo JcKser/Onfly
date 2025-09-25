@@ -14,15 +14,15 @@ Conector customizado para o **n8n**, chamado **Random**, que gera números verda
 ## 🚀 Subindo a infra do n8n
 Suba o ambiente com Postgres e n8n via Docker Compose:
 
+```bash
 docker compose up -d
-
 O n8n ficará disponível em:
 👉 http://localhost:5678
 
 🛠️ Instalando e compilando o conector
 Acesse a pasta do conector:
 
-``bash
+bash
 Copiar código
 cd .n8n/custom/Random
 Instale as dependências:
