@@ -92,6 +92,22 @@ Com o conector instalado e o n8n rodando, você pode adicioná-lo ao seu workflo
 6.  O número aleatório gerado aparecerá no painel de **Output**. 🎉
 
 ---
+## 🔐 Variáveis de ambiente
+
+As seguintes variáveis de ambiente são usadas pelo `docker-compose.yml` para configurar o n8n com Postgres e carregar o conector customizado:
+
+- **POSTGRES_USER** → usuário do banco (padrão: `n8n`)  
+- **POSTGRES_PASSWORD** → senha do banco (padrão: `n8n`)  
+- **POSTGRES_DB** → nome do banco (padrão: `n8n`)  
+- **DB_TYPE** → tipo de banco usado pelo n8n (`postgresdb`)  
+- **DB_POSTGRESDB_HOST** → host do Postgres (`postgres`)  
+- **DB_POSTGRESDB_PORT** → porta do Postgres (`5432`)  
+- **DB_POSTGRESDB_DATABASE** → nome do banco usado pelo n8n (padrão: `n8n`)  
+- **DB_POSTGRESDB_USER** → usuário usado pelo n8n (padrão: `n8n`)  
+- **DB_POSTGRESDB_PASSWORD** → senha usada pelo n8n (padrão: `n8n`)  
+- **N8N_CUSTOM_EXTENSIONS** → caminho da pasta de conectores customizados (`/home/node/.n8n/custom`)
+
+
 
 ## ✅ Requisitos atendidos
 
