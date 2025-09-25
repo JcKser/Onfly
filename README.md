@@ -91,20 +91,20 @@ Com o conector instalado e o n8n rodando, você pode adicioná-lo ao seu workflo
 5.  Clique em **Test step** para executar o nó.
 6.  O número aleatório gerado aparecerá no painel de **Output**. 🎉
 
----
+✅ Requisitos atendidos
+Nome do conector: Random
 
-## ✅ Requisitos atendidos
+Operação: True Random Number Generator
 
--   **Nome do conector:** `Random`
--   **Operação:** *True Random Number Generator*
--   **Inputs:** `Min` e `Max` para definir o intervalo.
--   **Integração:** Conecta-se à API do **Random.org**.
--   **Visual:** Ícone SVG customizado para fácil identificação.
--   **Infraestrutura:** `docker-compose.yml` com Postgres pré-configurado.
--   **Documentação:** Guia completo de setup e uso.
+Inputs: Min e Max
 
----
+Integração com Random.org
 
-## ✨ Autor
+Ícone SVG customizado
 
-Desenvolvido por **Júlio César**.
+Docker Compose com Postgres
+
+Documentação de setup e uso
+
+✨ Autor
+Desenvolvido por Júlio César
