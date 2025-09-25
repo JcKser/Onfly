@@ -1,0 +1,25 @@
+{
+  "name": "n8n-nodes-random-onfly",
+  "version": "1.0.0",
+  "description": "Um conector n8n customizado que gera um número aleatório usando a API do Random.org.",
+  "main": "dist/Random.node.js",
+  "scripts": {
+    "build": "tsc && if not exist dist mkdir dist && copy Random.svg dist\\",
+    "dev": "tsc --watch"
+  },
+  "files": [
+    "dist",
+    "Random.svg"
+  ],
+  "n8n": {
+    "nodes": [
+      "dist/Random.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "~5.4.5"
+  },
+  "author": "Júlio César",
+  "license": "MIT"
+}
