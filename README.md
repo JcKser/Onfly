@@ -1,82 +1,110 @@
-# 🎲 Onfly - n8n Custom Connector
+# 🎲 Onfly - n8n Custom Connector: Random
 
-Conector customizado para o **n8n**, chamado **Random**, que gera números verdadeiramente aleatórios usando a [API do Random.org](https://www.random.org/).
+Conector customizado para o **n8n**, chamado **Random**, que gera números verdadeiramente aleatórios usando a [API pública do Random.org](https://www.random.org/).
+
+---
+
+## 📚 Índice
+
+- [Pré-requisitos](#-pré-requisitos)
+- [Subindo a infra do n8n](#-subindo-a-infra-do-n8n)
+- [Instalando e compilando o conector](#️-instalando-e-compilando-o-conector)
+- [Como usar](#-como-usar-o-conector-no-n8n)
+- [Funcionalidades](#-requisitos-atendidos)
+- [Autor](#-autor)
 
 ---
 
 ## 📋 Pré-requisitos
-- Node.js **22 (LTS)**
-- TypeScript
-- Docker + Docker Compose
+
+Para utilizar este conector, você precisará de:
+-   Node.js **v22 (LTS)**
+-   TypeScript
+-   Docker e Docker Compose
 
 ---
 
 ## 🚀 Subindo a infra do n8n
-Suba o ambiente com Postgres e n8n via Docker Compose:
 
-```bash
-docker compose up -d
-O n8n ficará disponível em:
-👉 http://localhost:5678
+O projeto inclui um `docker-compose.yml` para subir um ambiente n8n com um banco de dados Postgres de forma rápida.
 
-🛠️ Instalando e compilando o conector
-Acesse a pasta do conector:
+1.  Execute o comando na raiz do projeto:
+    ```bash
+    docker compose up -d
+    ```
 
-bash
-Copiar código
-cd .n8n/custom/Random
-Instale as dependências:
+2.  Após a conclusão, o n8n estará disponível no seu navegador em:
+    👉 [http://localhost:5678](http://localhost:5678)
 
-bash
-Copiar código
-npm install
-Compile o projeto (gera a pasta dist/ e copia o SVG):
+---
 
-bash
-Copiar código
-npm run build
-Estrutura final esperada:
+## 🛠️ Instalando e compilando o conector
 
-mathematica
-Copiar código
-.n8n/custom/Random/
-  ├── dist/
-  │   ├── Random.node.js
-  │   ├── Random.node.d.ts
-  │   └── Random.svg
-  ├── Random.node.ts
-  ├── Random.svg
-  ├── package.json
-  ├── tsconfig.json
-🧩 Como usar o conector no n8n
-No editor do n8n, clique em Add Node (+).
+Siga os passos abaixo para instalar e compilar o conector customizado.
 
-Busque por Random Number.
+1.  **Acesse a pasta do conector:**
+    ```bash
+    cd .n8n/custom/Random
+    ```
 
-Configure os parâmetros:
+2.  **Instale as dependências do Node.js:**
+    ```bash
+    npm install
+    ```
 
-Min → valor mínimo (inclusivo)
+3.  **Compile o projeto TypeScript:**
+    *Este comando transpila o código para JavaScript (`.js`), gera os tipos (`.d.ts`) e copia os arquivos compilados junto com o ícone para a pasta `dist/`.*
+    ```bash
+    npm run build
+    ```
 
-Max → valor máximo (inclusivo)
+4.  **Estrutura de arquivos final:**
+    Após a compilação, a estrutura de pastas do conector deve ser a seguinte:
+    ```text
+    .n8n/custom/Random/
+    ├── dist/
+    │   ├── Random.node.js
+    │   ├── Random.node.d.ts
+    │   └── Random.svg
+    ├── Random.node.ts
+    ├── Random.svg
+    ├── package.json
+    └── tsconfig.json
+    ```
+5.  **Reinicie o container do n8n** para que ele reconheça o novo conector.
+    ```bash
+    docker compose restart n8n
+    ```
 
-Clique em Test step.
+---
 
-Veja o número aleatório no output. 🎉
+## 🧩 Como usar o conector no n8n
 
-✅ Requisitos atendidos
-Nome do conector: Random
+Com o conector instalado e o n8n rodando, você pode adicioná-lo ao seu workflow.
 
-Operação: True Random Number Generator
+1.  No editor de workflows do n8n, clique no botão **+** para adicionar um novo nó.
+2.  Na barra de busca, procure por "**Random Number**".
+3.  Arraste o nó para a sua área de trabalho.
+4.  Configure os parâmetros no painel lateral:
+    -   `Min` → O valor mínimo para o número aleatório (inclusivo).
+    -   `Max` → O valor máximo para o número aleatório (inclusivo).
+5.  Clique em **Test step** para executar o nó.
+6.  O número aleatório gerado aparecerá no painel de **Output**. 🎉
 
-Inputs: Min e Max
+---
 
-Integração com Random.org
+## ✅ Requisitos atendidos
 
-Ícone SVG customizado
+-   **Nome do conector:** `Random`
+-   **Operação:** *True Random Number Generator*
+-   **Inputs:** `Min` e `Max` para definir o intervalo.
+-   **Integração:** Conecta-se à API do **Random.org**.
+-   **Visual:** Ícone SVG customizado para fácil identificação.
+-   **Infraestrutura:** `docker-compose.yml` com Postgres pré-configurado.
+-   **Documentação:** Guia completo de setup e uso.
 
-Docker Compose com Postgres
+---
 
-Documentação de setup e uso
+## ✨ Autor
 
-✨ Autor
-Desenvolvido por Júlio César
+Desenvolvido por **Júlio César**.
